@@ -22,6 +22,11 @@ class UI {
         this.movies.innerHTML = output;
     }
     paintSingle(data){
+        let name = data.Title.split(' ');
+        let date = new Date(data.Released).getFullYear();
+        name.push(date);
+        name = name.join('-');
+        console.log(name);
         let output = `
             <div class="row">
                 <div class="col-md-4">
@@ -45,6 +50,7 @@ class UI {
                         <p class="lead">${data.Plot}</p><hr>
                         <a href="http://imdb.com/title/${data.imdbID}" target="_blank" class="btn btn-primary">View in imdb</a>
                         <a href="index.html" class="btn btn-default">go back to search</a>
+                        <a href="https://back.egybest.co/${data.Type}/${name}/" class="btn btn-primary" target="_blank"">watch on EGY BEST</a>
                     </div>
                 </div>
             </div>
