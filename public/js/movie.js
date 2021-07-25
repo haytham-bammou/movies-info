@@ -3,7 +3,7 @@ class Movie {
         this.apiKey = '220647b9'; 
     }
     async getMovies(search){
-        const responseMovies = await fetch(`http://www.omdbapi.com/?s=${search}&apikey=${this.apiKey}`)
+        const responseMovies = await fetch(`https://www.omdbapi.com/?s=${search}&apikey=${this.apiKey}`)
         return await responseMovies.json();
     }
     movieSelected(id){
@@ -13,7 +13,7 @@ class Movie {
     }
     async getMovie(){
         const id = sessionStorage.getItem('movieId');
-        const responseMovies = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=${this.apiKey}`)
+        const responseMovies = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=${this.apiKey}`)
         return await responseMovies.json();
     }
 }
